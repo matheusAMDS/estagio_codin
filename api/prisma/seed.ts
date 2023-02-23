@@ -56,20 +56,6 @@ async function main() {
     ]
   })
 
-  await prisma.box.createMany({
-    data: [
-      {
-        title: "Entrada"
-      },
-      {
-        title: "Saída"
-      },
-      {
-        title: "Arquivado"
-      }
-    ]
-  })
-
   await prisma.judicialProcess.createMany({
     data: [
       {
@@ -83,7 +69,6 @@ async function main() {
         ownerId: 2,
         possessionId: 2,
         themeId: 1,
-        boxId: 1
       }, {
         type: "ADMINISTRATIVO",
         number: "2023006597",
@@ -95,7 +80,6 @@ async function main() {
         possessionId: 1,
         archived: false,
         activeStatus: true,
-        boxId: 1
       }, {
         type: "ADMINISTRATIVO",
         number: "2023006158",
@@ -107,7 +91,6 @@ async function main() {
         archived: false,
         activeStatus: true,
         themeId: 1,
-        boxId: 1
       }, {
         type: "ADMINISTRATIVO",
         number: "2023007615",
@@ -119,7 +102,6 @@ async function main() {
         archived: false,
         activeStatus: true,
         themeId: 1,
-        boxId: 2
       }, {
         type: "ADMINISTRATIVO",
         number: "2023001975",
@@ -131,7 +113,6 @@ async function main() {
         archived: false,
         activeStatus: true,
         themeId: 1,
-        boxId: 2
       }, {
         type: "ADMINISTRATIVO",
         number: "2023004687",
@@ -143,12 +124,9 @@ async function main() {
         archived: true,
         activeStatus: true,
         themeId: 1,
-        boxId: 3
       }
     ]
   })
-
-
 }
 
 main().then(async () => {
