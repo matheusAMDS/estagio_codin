@@ -1,3 +1,28 @@
+<script lang="ts">
+  import type { PageData, ActionData } from "./$types";
+
+  import { browser } from "$app/environment";
+  import * as navigation from "$app/navigation";
+
+  import * as authStore from "$lib/auth";
+
+  export let data: PageData;
+
+  export let form: ActionData;
+
+  if (form) {
+    if (form.success && browser) {
+      authStore.saveSession(form.res.accessToken);
+
+      navigation.goto("/home").catch((err) => {
+        console.log("Eita", err);
+      });
+    } else {
+      console.log(form.message);
+    }
+  }
+</script>
+
 <div
   class="flex justify-between flex-wrap lg:items-center lg:flex-nowrap lg:space-x-20"
 >
@@ -18,25 +43,19 @@
   </section>
 
   <section class="w-full max-w-md">
-    <form class="flex flex-col">
+    <form class="flex flex-col" method="POST" action="/">
       <li class="list-none w-full my-2">
-        <label for="login-email" class="text-gray-600 ">E-mail</label>
+        <label for="login-name" class="text-gray-600"> Digite seu nome: </label>
         <input
-          type="email"
-          id="login-email"
-          class="w-full border rounded p-2 block"
+          name="name"
+          type="text"
+          id="login-name"
+          class="w-full border rounded p-2 block mt-2"
         />
       </li>
-      <li class="list-none w-full my-2">
-        <label for="login-password" class="text-gray-600">Senha</label>
-        <input
-          type="password"
-          id="login-password"
-          class="w-full border rounded p-2 block"
-        />
-      </li>
-
-      <button class="bg-green-600 text-white rounded p-2 mt-6"> Entrar </button>
+      <button type="submit" class="bg-green-600 text-white rounded p-2 mt-6">
+        Entrar
+      </button>
 
       <a href="/cadastro" class="mx-auto my-2 text-blue-700 hover:underline">
         Ainda não possui uma conta? Cadastre-se!

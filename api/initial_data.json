@@ -1,0 +1,96 @@
+{
+	"usuarios": [{
+		"id": 0,
+		"nome": "Jorge Costa",
+		"cargo": "Procurador",
+		"setor": "CCAC",
+		"statusAtivo": true
+	},{
+		"id": 1,
+		"nome": "João Silva",
+		"cargo": "Procurador Chefe",
+		"setor": "CCAC",
+		"statusAtivo": true
+	},{
+		"id": 2,
+		"nome": "Maria Santos",
+		"cargo": "Procurador",
+		"setor": "CCVASP",
+		"statusAtivo": true
+	}],
+	"processos": [
+		{
+			"id": 0,
+			"tipo": "administrativo",
+			"numero": "2023002548",
+			"tema": "ICMS",
+			"situacao": "JULGADO",
+			"dataInicio": "14/02/2023",
+			"dataPrazo": "23/02/2023",
+			"dono": 1,
+			"posse": 1,
+			"arquivado": false,
+			"statusAtivo": true
+		},{
+			"id": 1,
+			"tipo": "administrativo",
+			"numero": "2023006597",
+			"tema": "ICMS",
+			"situacao": "EM ANDAMENTO",
+			"dataInicio": "16/02/2023",
+			"dataPrazo": "21/02/2023",
+			"dono": 0,
+			"posse": 0,
+			"arquivado": false,
+			"statusAtivo": true
+		},{
+			"id": 2,
+			"tipo": "administrativo",
+			"numero": "2023006158",
+			"tema": "ICMS",
+			"situacao": "EM ANDAMENTO",
+			"dataInicio": "12/02/2023",
+			"dataPrazo": "18/02/2023",
+			"dono": 2,
+			"posse": 2,
+			"arquivado": false,
+			"statusAtivo": true
+		},{
+			"id": 3,
+			"tipo": "administrativo",
+			"numero": "2023007615",
+			"tema": "ICMS",
+			"situacao": "JULGADO",
+			"dataInicio": "10/02/2023",
+			"dataPrazo": "28/02/2023",
+			"dono": 1,
+			"posse": 2,
+			"arquivado": false,
+			"statusAtivo": true
+		},{
+			"id": 4,
+			"tipo": "administrativo",
+			"numero": "2023001975",
+			"tema": "ICMS",
+			"situacao": "EM ANDAMENTO",
+			"dataInicio": "04/02/2023",
+			"dataPrazo": "13/02/2023",
+			"dono": 0,
+			"posse": 0,
+			"arquivado": false,
+			"statusAtivo": true
+		},{
+			"id": 5,
+			"tipo": "administrativo",
+			"numero": "2023004687",
+			"tema": "ICMS",
+			"situacao": "JULGADO",
+			"dataInicio": "01/02/2023",
+			"dataPrazo": "10/02/2023",
+			"dono": 1,
+			"posse": 1,
+			"arquivado": true,
+			"statusAtivo": true
+		}
+	]
+}

@@ -18,6 +18,8 @@ model User {
   departmentId Int
   department Department @relation(fields: [departmentId], references: [id])
   statusActive Boolean
+  ownerships JudicialProcess[] @relation("Ownership")
+  possessions JudicialProcess[] @relation("Possession")
 }
 
 model Role {
@@ -31,3 +33,49 @@ model Department {
   name String @unique
   users User[]
 }
+
+enum JudicialProcessType {
+  ADMINISTRATIVO
+}
+
+enum JudicialProcessStatus {
+  JULGADO
+  EM_ANDAMENTO
+}
+
+model JudicialProcess {
+  id Int @id @default(autoincrement())
+  number String @unique
+  archived Boolean
+  activeStatus Boolean
+  startDate DateTime
+  endDate DateTime
+
+  type JudicialProcessType
+
+  themeId Int
+  theme JudicialProcessTheme @relation(fields: [themeId], references: [id])
+
+  status JudicialProcessStatus
+
+  ownerId Int
+  owner User @relation("Ownership", fields: [ownerId], references: [id])
+
+  possessionId Int
+  possession User @relation("Possession", fields: [possessionId], references: [id])
+
+  // boxId Int
+  // box Box @relation(fields: [boxId], references: [id])
+}
+
+model JudicialProcessTheme {
+  id Int @id @default(autoincrement())
+  name String @unique
+  processes JudicialProcess[]
+}
+
+// model Box {
+//   id Int @id @default(autoincrement())
+//   title String @unique
+//   processes JudicialProcess[]
+// }
