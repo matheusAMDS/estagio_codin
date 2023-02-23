@@ -1,7 +1,13 @@
 # estagio_codin
 
+## Tecnologias
+- Banco de dados: MySQL
+- Linguagem de programação para backend e frontend: Node.js + TypeScript
+- Framework para construção da solução backend: Nestjs + Prisma (ORM)
+- Framework para construção da solução frontend: Svelte.kit (Svelte.js)
+
 ## Banco de dados
-Foi utilizado o MySQL como SGBD da API, e o [Prisma](https://www.prisma.io/) como ORM. Para configurar o acesso, deve-se entrar na pasta `api` e
+Para configurar o acesso, deve-se entrar na pasta `api` e
 configurar o arquivo `.env` que contém a URL de acesso do banco de dados:
 ```bash
 DATABASE_URL=<sgbd>://<user>:<password>@<host>:<port>/<db>?schema=public
